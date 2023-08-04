@@ -5,16 +5,19 @@ export default function Form(props) {
         // console.log("before" +text);
         let textlocal=text.toUpperCase();
         settext(textlocal);
+        props.showAlert('Converted to Upper Case','success');
         
     }
     const  handleonclickLower=()=>{
         let textlocal=text.toLowerCase();
         settext(textlocal);
+        props.showAlert('Converted to Lower Case','success');
    
     }
     const  handleonclickclear=()=>{
         let textlocal='';
         settext(textlocal);
+        props.showAlert('Cleared Everything','success');
    
     }
        
@@ -33,9 +36,9 @@ export default function Form(props) {
          <div className="mb-3">
            <textarea className="form-control" id="mybox" style={{backgroundColor:props.mode==='light'?'white':'#067a97', color:props.mode==='light'?'black':'white'}} onChange={handlechange} value={text} rows="6"></textarea>
          </div>
-            <button className="btn btn-primary" onClick={handleonclick}>Convert to Upper Case</button>
-            <button className="btn btn-primary mx-4" onClick={handleonclickLower}>Convert to Lower Case</button>
-            <button className="btn btn-primary mx-4" onClick={handleonclickclear}>Clear Text</button>
+            <button className="btn btn-primary"  onClick={handleonclick}>Convert to Upper Case</button>
+            <button className="btn btn-primary mx-4"  onClick={handleonclickLower}>Convert to Lower Case</button>
+            <button className="btn btn-primary mx-4"  onClick={handleonclickclear}>Clear Text</button>
         </div> 
         <div className="container my-3">
             <h2>Your Text Summary</h2>
